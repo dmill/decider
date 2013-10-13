@@ -27,8 +27,9 @@ describe ProblemsController do
 			expect(response).to render_template(:index)
 		end
 		it "lists all problems" do
-			problem1, problem2 = FactoryGirl.create(:problem)
-
+			problem1, problem2 = FactoryGirl.create(:problem), FactoryGirl.create(:problem)
+			get :index
+			expect(assigns(:problems)).to include(problem1, problem2)
 		end
 	end
 end
