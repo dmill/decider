@@ -1,5 +1,9 @@
+<div class="new_problem_button">
+	<%= link_to "New Problem", new_problem_path %>
+</div>
 <div class="problems">
 	<%@problems.each do |problem|%>
 		<%= link_to "#{problem.text}", problem_path(problem) %>
+		<br />
 	<%end%>
 </div>
