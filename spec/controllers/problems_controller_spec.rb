@@ -20,4 +20,15 @@ describe ProblemsController do
 			expect(response).to redirect_to problem_path Problem.last
 		end
 	end
+
+	describe "GET problems#index" do
+		it "renders the problems#index view" do
+			get :index
+			expect(response).to render_template(:index)
+		end
+		it "lists all problems" do
+			problem1, problem2 = FactoryGirl.create(:problem)
+
+		end
+	end
 end
